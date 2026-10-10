@@ -24,9 +24,11 @@ npm run host:stop
 - **Gemini Flash**: scouting, test runs, fast debug loops, CI.
 - **Sonnet**: extended build passes and UI polish.
 - **Opus**: architecture and ADRs, 1-3 turns per task. No file reading or test-fix loops.
-- Retire a thread at 8 turns or 150k tokens: commit, then fork from a checkpoint or start fresh. Run large passes in a worktree.
-- Fork checkpoints replace auto-delegation loops. Don't chain `delegate_task` between models.
+- Thread length, worktrees and delegation follow the global rules.
 - Never leave a dev server or watcher running at the end of a turn. Use `npm run host` for anything that must stay up, then stop it.
 
 ## Commits
 Author and committer are `rvyyv-n` only. No co-author, generated-by or assistant mentions in commits, PR text or files. Never `--no-verify`.
+
+## Verify
+For a test handoff, run `npm run check` from the repo root.
