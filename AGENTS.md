@@ -1,6 +1,6 @@
 # Banker: agent rules
 
-A local-first project and idea vault: React 19, TypeScript, Vite, Tailwind v4, lucide-react. Data lives in browser storage; no backend. `/usage.json` is served by a Vite plugin (`vite.config.ts`) from `scripts/usage-collector.cjs`, which reads local harness logs.
+A local-first project and idea vault: React 19, TypeScript, Vite, Tailwind v4, lucide-react. Data lives in browser storage; no backend. `/usage.json` and `/repos.json` are served by a Vite plugin (`vite.config.ts`) from `scripts/usage-collector.cjs` (local harness logs) and `scripts/repo-status.cjs` (local repo status).
 
 ## Commands
 ```powershell
@@ -19,12 +19,6 @@ npm run host:stop
 - Capture screenshots only for a visual change that tests or page text can't confirm. Rebuild first, since `capture.cjs` reads `dist/`.
 - `scripts/usage-collector.cjs` reads private local logs. Never commit its output or any log content.
 - Keep the app local-first: no CDNs, analytics or network calls for project data.
-
-## Models and threads
-- **Gemini Flash**: scouting, test runs, fast debug loops, CI.
-- **Sonnet**: extended build passes and UI polish.
-- **Opus**: architecture and ADRs, 1-3 turns per task. No file reading or test-fix loops.
-- Thread length, worktrees and delegation follow the global rules.
 - Never leave a dev server or watcher running at the end of a turn. Use `npm run host` for anything that must stay up, then stop it.
 
 ## Commits

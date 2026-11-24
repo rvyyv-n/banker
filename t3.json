@@ -1,0 +1,31 @@
+{
+  "$schema": "https://t3.codes/schema/t3.json",
+  "iconPath": "public/favicon.svg",
+  "scripts": [
+    {
+      "name": "Worktree Setup",
+      "command": "npm ci",
+      "icon": "configure",
+      "runOnWorktreeCreate": true,
+      "async": false
+    },
+    {
+      "name": "Dev",
+      "command": "npm run dev",
+      "icon": "play",
+      "stopOnSettle": true,
+      "previewUrl": "http://localhost:3333",
+      "autoOpenPreview": true
+    },
+    {
+      "name": "Check",
+      "command": "npm run check",
+      "icon": "lint"
+    },
+    {
+      "name": "Test E2E",
+      "command": "npm run test:e2e",
+      "icon": "test"
+    }
+  ]
+}
